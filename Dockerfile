@@ -68,3 +68,6 @@ RUN set -eux && \
     pip3 config set global.index-url http://mirrors.aliyun.com/pypi/simple/ && \
     pip3 config set install.trusted-host mirrors.aliyun.com && \
     rm -r /root/.cache && rm -rf /var/cache/apk/*
+
+# ***** 命令 *****
+CMD [ "sleep", "360000000" ]
