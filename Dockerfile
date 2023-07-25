@@ -36,6 +36,9 @@ ARG PKG_DEPS="\
       sshpass \
       docker \
       docker-compose \
+      openssl-dev \
+      openssh-client \
+      rsync \
       ca-certificates"
 ENV PKG_DEPS=$PKG_DEPS
 
