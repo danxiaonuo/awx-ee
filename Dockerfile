@@ -57,3 +57,14 @@ RUN set -eux && \
    sed -i -e "s/bin\/ash/bin\/zsh/" /etc/passwd && \
    sed -i -e 's/mouse=/mouse-=/g' /usr/share/vim/vim*/defaults.vim && \
    /bin/zsh
+
+# ***** 升级 setuptools 版本 *****
+RUN set -eux && \
+    python3 -m ensurepip && \
+    rm -r /usr/lib/python*/ensurepip && \
+    pip3 install --upgrade pip setuptools wheel pycryptodome lxml cython beautifulsoup4 requests ansible && \
+    if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi && \
+    if [[ ! -e /usr/bin/python ]]; then ln -sf /usr/bin/python3 /usr/bin/python; fi && \
+    pip3 config set global.index-url http://mirrors.aliyun.com/pypi/simple/ && \
+    pip3 config set install.trusted-host mirrors.aliyun.com && \
+    rm -r /root/.cache && rm -rf /var/cache/apk/*
