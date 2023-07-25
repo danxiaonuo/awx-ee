@@ -1,0 +1,33 @@
+{
+    "bip": "172.188.0.1/24",
+    "mtu": 1500,
+    "ipv6": true,
+    "fixed-cidr": "172.188.0.0/24",
+    "fixed-cidr-v6": "2088::/64",
+    "live-restore": true,
+    "dns": ["8.8.8.8", "223.5.5.5"],
+    "debug":false,
+    "log-driver":"json-file",
+    "log-opts":{
+        "max-size":"200m",
+        "max-file":"5"
+    },
+    "default-ulimits": {
+    "nofile": {
+      "Name": "nofile",
+      "Hard": 655360,
+      "Soft": 655360
+    },
+    "nproc": {
+      "Name": "nproc",
+      "Hard": 655360,
+      "Soft": 655360
+      }
+    },
+    "max-concurrent-downloads":10,
+    "max-concurrent-uploads":10,
+    "registry-mirrors":[
+          "https://docker.xiaonuo.live"
+    ],
+    "exec-opts": ["native.cgroupdriver=systemd"]
+}
