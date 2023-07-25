@@ -56,6 +56,7 @@ RUN set -eux && \
    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" || true && \
    sed -i -e "s/bin\/ash/bin\/zsh/" /etc/passwd && \
    sed -i -e 's/mouse=/mouse-=/g' /usr/share/vim/vim*/defaults.vim && \
+   mkdir -pv /etc/docker /etc/ansible && \
    /bin/zsh
 
 # ***** 升级 setuptools 版本 *****
